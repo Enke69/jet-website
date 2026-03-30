@@ -288,12 +288,50 @@ function initLangSwitch() {
   const buttons = document.querySelectorAll('.lang-btn');
   if (buttons.length === 0) return;
 
+  // Check saved language preference
+  const savedLang = localStorage.getItem('jet-lang') || 'en';
+
+  // Apply saved language on load
+  if (savedLang !== 'en') {
+    applyTranslations(savedLang);
+    buttons.forEach(b => b.classList.remove('active'));
+    buttons.forEach(b => {
+      if (b.textContent.trim() === 'MN') b.classList.add('active');
+    });
+  }
+
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       buttons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      const lang = btn.textContent.trim() === 'MN' ? 'mn' : 'en';
+      localStorage.setItem('jet-lang', lang);
+      applyTranslations(lang);
     });
   });
+}
+
+function applyTranslations(lang) {
+  if (typeof translations === 'undefined') return;
+
+  // Translate all elements with data-i18n attribute
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[key] && translations[key][lang]) {
+      el.innerHTML = translations[key][lang];
+    }
+  });
+
+  // Translate placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (translations[key] && translations[key][lang]) {
+      el.placeholder = translations[key][lang];
+    }
+  });
+
+  // Update html lang attribute
+  document.documentElement.lang = lang === 'mn' ? 'mn' : 'en';
 }
 
 // --- Sidebar Scroll Spy ---

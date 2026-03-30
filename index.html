@@ -24,7 +24,7 @@
         </a>
         <a href="#">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          8:40 AM – 5:40 PM (Mon–Fri)
+          <span data-i18n="top.hours">8:40 AM – 5:40 PM (Mon–Fri)</span>
         </a>
       </div>
       <div class="top-bar-right">
@@ -56,15 +56,15 @@
         <div>JET <span>Institute</span></div>
       </a>
       <nav class="nav" id="nav">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="book-ielts.html" class="nav-link">Book IELTS</a>
-        <a href="about-test.html" class="nav-link">About the Test</a>
-        <a href="preparation.html" class="nav-link">Preparation</a>
-        <a href="about.html" class="nav-link">About Us</a>
+        <a href="index.html" class="nav-link active" data-i18n="nav.home">Home</a>
+        <a href="book-ielts.html" class="nav-link" data-i18n="nav.book">Book IELTS</a>
+        <a href="about-test.html" class="nav-link" data-i18n="nav.about_test">About the Test</a>
+        <a href="preparation.html" class="nav-link" data-i18n="nav.preparation">Preparation</a>
+        <a href="about.html" class="nav-link" data-i18n="nav.about">About Us</a>
         <button class="search-toggle" aria-label="Search">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
-        <a href="https://ieltsregistration.britishcouncil.org/orsnbc/?organisation=JET" class="nav-link cta" target="_blank">Register Now</a>
+        <a href="https://ieltsregistration.britishcouncil.org/orsnbc/?organisation=JET" class="nav-link cta" target="_blank" data-i18n="nav.register">Register Now</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -77,7 +77,7 @@
   <div class="search-overlay" id="search-overlay">
     <div class="search-box">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:12px;color:var(--text-muted);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" placeholder="Search for courses, test dates, tips..." id="search-input">
+      <input type="text" placeholder="Search for courses, test dates, tips..." id="search-input" data-i18n-placeholder="search.placeholder">
       <button class="search-close" aria-label="Close search">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
@@ -94,21 +94,21 @@
     </div>
     <div class="container">
       <div class="hero-content" data-animate="fade-in-up">
-        <div class="hero-badge">🏆 Official IELTS Test Centre in Mongolia</div>
-        <h1>The first <span class="highlight">Computer-Delivered IELTS</span> Test Center in Mongolia</h1>
-        <p>Mongolia's leading English language school since 1995. We have successfully taken the computer-based IELTS test since 2019 from 10,000+ people.</p>
+        <div class="hero-badge" data-i18n="home.badge">🏆 Official IELTS Test Centre in Mongolia</div>
+        <h1 data-i18n="home.title">The first <span class="highlight">Computer-Delivered IELTS</span> Test Center in Mongolia</h1>
+        <p data-i18n="home.subtitle">Mongolia's leading English language school since 1995. We have successfully taken the computer-based IELTS test since 2019 from 10,000+ people.</p>
         <div class="hero-actions">
-          <a href="https://ieltsregistration.britishcouncil.org/orsnbc/?organisation=JET" class="btn btn-primary btn-lg" target="_blank">Book IELTS Now</a>
-          <a href="about-test.html" class="btn btn-outline btn-lg">Learn About IELTS</a>
+          <a href="https://ieltsregistration.britishcouncil.org/orsnbc/?organisation=JET" class="btn btn-primary btn-lg" target="_blank" data-i18n="home.book_now">Book IELTS Now</a>
+          <a href="about-test.html" class="btn btn-outline btn-lg" data-i18n="home.learn_about">Learn About IELTS</a>
         </div>
         <div class="hero-stats">
           <div class="hero-stat-item">
             <h3 data-count="10000">0</h3>
-            <p>Candidates</p>
+            <p data-i18n="home.candidates">Candidates</p>
           </div>
           <div class="hero-stat-item">
             <h3 data-count="7">0</h3>
-            <p>Years of Experience</p>
+            <p data-i18n="home.years_exp">Years of Experience</p>
           </div>
           <div class="hero-stat-item">
             <h3>✅</h3>
@@ -123,34 +123,34 @@
   <section class="section">
     <div class="container">
       <div class="section-header" data-animate="fade-in-up">
-        <div class="section-label">What We Offer</div>
-        <h2>How We Can Help You</h2>
-        <p>Everything you need to succeed in your IELTS journey, from booking to preparation and results.</p>
+        <div class="section-label" data-i18n="home.offer_label">What We Offer</div>
+        <h2 data-i18n="home.offer_title">How We Can Help You</h2>
+        <p data-i18n="home.offer_desc">Everything you need to succeed in your IELTS journey, from booking to preparation and results.</p>
       </div>
       <div class="grid-4">
         <div class="feature-card" data-animate="fade-in-up" data-delay="0.1">
           <div class="feature-icon coral">📝</div>
-          <h3>Book IELTS</h3>
-          <p>Check available dates, register for your test, and manage your booking with ease.</p>
-          <a href="book-ielts.html" class="card-link">Learn More →</a>
+          <h3 data-i18n="home.feat_book">Book IELTS</h3>
+          <p data-i18n="home.feat_book_desc">Check available dates, register for your test, and manage your booking with ease.</p>
+          <a href="book-ielts.html" class="card-link" data-i18n="home.learn_more">Learn More →</a>
         </div>
         <div class="feature-card" data-animate="fade-in-up" data-delay="0.2">
           <div class="feature-icon teal">📖</div>
-          <h3>About the Test</h3>
-          <p>Understand IELTS types, formats, and find out which test is right for your goals.</p>
-          <a href="about-test.html" class="card-link">Learn More →</a>
+          <h3 data-i18n="home.feat_about">About the Test</h3>
+          <p data-i18n="home.feat_about_desc">Understand IELTS types, formats, and find out which test is right for your goals.</p>
+          <a href="about-test.html" class="card-link" data-i18n="home.learn_more">Learn More →</a>
         </div>
         <div class="feature-card" data-animate="fade-in-up" data-delay="0.3">
           <div class="feature-icon purple">🎓</div>
-          <h3>IELTS Preparation</h3>
-          <p>Access free sample tests, study guides, tips, and success stories from test takers.</p>
-          <a href="preparation.html" class="card-link">Learn More →</a>
+          <h3 data-i18n="home.feat_prep">IELTS Preparation</h3>
+          <p data-i18n="home.feat_prep_desc">Access free sample tests, study guides, tips, and success stories from test takers.</p>
+          <a href="preparation.html" class="card-link" data-i18n="home.learn_more">Learn More →</a>
         </div>
         <div class="feature-card" data-animate="fade-in-up" data-delay="0.4">
           <div class="feature-icon navy">🏫</div>
-          <h3>About Us</h3>
-          <p>Learn about our centre, faculty, policies, and our commitment to your success.</p>
-          <a href="about.html" class="card-link">Learn More →</a>
+          <h3 data-i18n="home.feat_us">About Us</h3>
+          <p data-i18n="home.feat_us_desc">Learn about our centre, faculty, policies, and our commitment to your success.</p>
+          <a href="about.html" class="card-link" data-i18n="home.learn_more">Learn More →</a>
         </div>
       </div>
     </div>
@@ -160,9 +160,9 @@
   <section class="section section-dark">
     <div class="container">
       <div class="section-header" data-animate="fade-in-up">
-        <div class="section-label">Why Choose IELTS</div>
-        <h2>The World's Most Trusted English Test</h2>
-        <p>Accepted by 11,000+ organizations in 140+ countries worldwide.</p>
+        <div class="section-label" data-i18n="home.why_label">Why Choose IELTS</div>
+        <h2 data-i18n="home.why_title">The World's Most Trusted English Test</h2>
+        <p data-i18n="home.why_desc">Accepted by 11,000+ organizations in 140+ countries worldwide.</p>
       </div>
       <div class="grid-3" data-animate="fade-in-up">
         <div class="glass-card" style="text-align:center">
@@ -188,9 +188,9 @@
   <section class="section">
     <div class="container">
       <div class="section-header" data-animate="fade-in-up">
-        <div class="section-label">Essential Details</div>
-        <h2>Quick Information</h2>
-        <p>Common questions answered at a glance.</p>
+        <div class="section-label" data-i18n="home.info_label">Essential Details</div>
+        <h2 data-i18n="home.info_title">Quick Information</h2>
+        <p data-i18n="home.info_desc">Common questions answered at a glance.</p>
       </div>
 
       <div style="max-width: 800px; margin: 0 auto;">
@@ -274,9 +274,9 @@
   <section class="section section-dark">
     <div class="container">
       <div class="section-header" data-animate="fade-in-up">
-        <div class="section-label">Student Voices</div>
-        <h2>What Our Students Say</h2>
-        <p>Hear from graduates who achieved their goals with JET Institute.</p>
+        <div class="section-label" data-i18n="home.testi_label">Student Voices</div>
+        <h2 data-i18n="home.testi_title">What Our Students Say</h2>
+        <p data-i18n="home.testi_desc">Hear from graduates who achieved their goals with JET Institute.</p>
       </div>
       <div class="testimonials-wrapper" data-animate="fade-in-up">
         <div class="testimonials-track" id="testimonials-track">
@@ -363,9 +363,9 @@
   <section class="section map-section">
     <div class="container">
       <div class="section-header" data-animate="fade-in-up">
-        <div class="section-label">Find Us</div>
-        <h2>Our Location</h2>
-        <p>Visit us at Max Centre, 5th Floor, Sukhbaatar District, Ulaanbaatar, Mongolia.</p>
+        <div class="section-label" data-i18n="home.map_label">Find Us</div>
+        <h2 data-i18n="home.map_title">Our Location</h2>
+        <p data-i18n="home.map_desc">Visit us at Max Centre, 5th Floor, Sukhbaatar District, Ulaanbaatar, Mongolia.</p>
       </div>
       <div class="map-wrapper" data-animate="fade-in-up">
         <iframe
@@ -390,15 +390,15 @@
             <div class="logo-icon">J</div>
             <div>JET <span>Institute</span></div>
           </a>
-          <p>JET Institute has been Mongolia's leading English language school since 1995. As the official IELTS Test Centre, we are committed to helping students achieve academic success.</p>
+          <p data-i18n="footer.desc">JET Institute has been Mongolia's leading English language school since 1995. As the official IELTS Test Centre, we are committed to helping students achieve academic success.</p>
         </div>
         <div>
-          <h4>Resources</h4>
+          <h4 data-i18n="footer.resources">Resources</h4>
           <div class="footer-links">
-            <a href="preparation.html#tips">Study Tips</a>
-            <a href="preparation.html#stories">Success Stories</a>
-            <a href="preparation.html#courses">Free Materials</a>
-            <a href="about-test.html">Test Information</a>
+            <a href="preparation.html#tips" data-i18n="footer.study_tips">Study Tips</a>
+            <a href="preparation.html#stories" data-i18n="footer.success_stories">Success Stories</a>
+            <a href="preparation.html#courses" data-i18n="footer.free_materials">Free Materials</a>
+            <a href="about-test.html" data-i18n="footer.test_info">Test Information</a>
           </div>
         </div>
         <div>
@@ -410,17 +410,17 @@
           </div>
         </div>
         <div>
-          <h4>Company</h4>
+          <h4 data-i18n="footer.company">Company</h4>
           <div class="footer-links">
-            <a href="about.html">About Us</a>
-            <a href="about.html#careers">Careers</a>
-            <a href="about.html#contact">Contact</a>
-            <a href="about.html#policy">Our Policy</a>
+            <a href="about.html" data-i18n="footer.about_us">About Us</a>
+            <a href="about.html#careers" data-i18n="footer.careers">Careers</a>
+            <a href="about.html#contact" data-i18n="footer.contact">Contact</a>
+            <a href="about.html#policy" data-i18n="footer.policy">Our Policy</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 JET Institute. All rights reserved.</span>
+        <span data-i18n="footer.copyright">© 2026 JET Institute. All rights reserved.</span>
         <div class="footer-social">
           <a href="https://facebook.com/jetinstitute" aria-label="Facebook" target="_blank">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -443,6 +443,7 @@
   <button class="scroll-top" aria-label="Scroll to top">↑</button>
 
 
+  <script src="js/translations.js"></script>
   <script src="js/script.js"></script>
     <!-- Chatbase Chatbot -->
     <script>
