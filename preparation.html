@@ -18,15 +18,17 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           (+976) 7711-8899 (2)
         </a>
-        <a href="mailto:enquiries@jet-english.mn">
+        <a href="mailto:ielts@jet-english.mn">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           ielts@jet-english.mn
         </a>
       </div>
       <div class="top-bar-right">
-        <a href="#" class="social-link" aria-label="Facebook">f</a>
-        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
-        <a href="#" class="social-link" aria-label="YouTube">▶</a>
+        <div class="lang-switch"><button class="lang-btn active">EN</button><button class="lang-btn">MN</button></div>
+        <a href="https://facebook.com/jetinstitute" class="social-link" aria-label="Facebook" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://instagram.com/jetinstitute" class="social-link" aria-label="Instagram" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/></svg></a>
+        <a href="#" class="social-link" aria-label="Twitter" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="#" class="social-link" aria-label="YouTube" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
       </div>
     </div>
   </div>
@@ -34,24 +36,29 @@
   <!-- Header -->
   <header class="header" id="header">
     <div class="container">
-      <a href="index.html" class="logo">
-        <div class="logo-icon">J</div>
-        <div>JET <span>Institute</span></div>
-      </a>
+      <a href="index.html" class="logo"><div class="logo-icon">J</div><div>JET <span>Institute</span></div></a>
       <nav class="nav" id="nav">
         <a href="index.html" class="nav-link">Home</a>
         <a href="book-ielts.html" class="nav-link">Book IELTS</a>
         <a href="about-test.html" class="nav-link">About the Test</a>
         <a href="preparation.html" class="nav-link active">Preparation</a>
         <a href="about.html" class="nav-link">About Us</a>
+        <button class="search-toggle" aria-label="Search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
         <a href="https://ieltsregistration.britishcouncil.org/orsnbc/?organisation=JET" class="nav-link cta" target="_blank">Register Now</a>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </header>
   <div class="nav-overlay" id="nav-overlay"></div>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-box">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:12px;color:var(--text-muted);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" placeholder="Search for courses, test dates, tips...">
+      <button class="search-close" aria-label="Close search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+  </div>
 
   <!-- Hero -->
   <section class="hero hero-page">
@@ -59,11 +66,7 @@
     <div class="hero-shapes"><div class="hero-shape"></div><div class="hero-shape"></div></div>
     <div class="container">
       <div class="hero-content" data-animate="fade-in-up">
-        <div class="breadcrumb">
-          <a href="index.html">Home</a>
-          <span class="separator">›</span>
-          <span>Preparation</span>
-        </div>
+        <div class="breadcrumb"><a href="index.html">Home</a><span class="separator">›</span><span>Preparation</span></div>
         <h1>IELTS <span class="highlight">Preparation</span></h1>
         <p>Expert courses, proven strategies, and resources to help you achieve your target IELTS score.</p>
       </div>
@@ -75,7 +78,7 @@
     <div class="container">
       <div class="section-header" data-animate="fade-in-up">
         <div class="section-label">Our Courses</div>
-        <h2>IELTS Courses at JET</h2>
+        <h2>Get IELTS Prep Courses</h2>
         <p>Choose the course that fits your schedule and goals.</p>
       </div>
 
@@ -85,23 +88,13 @@
           <h3 style="margin-bottom: var(--space-sm);">Intensive IELTS Course</h3>
           <p style="color: var(--accent-teal); font-weight: 600; margin-bottom: var(--space-md); font-size: 0.9rem;">Fast-track your preparation</p>
           <ul style="list-style: none; margin-bottom: var(--space-xl);">
-            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;">
-              <span style="color: var(--accent-teal);">✓</span> Full-time immersive program
-            </li>
-            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;">
-              <span style="color: var(--accent-teal);">✓</span> All 4 skills covered in depth
-            </li>
-            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;">
-              <span style="color: var(--accent-teal);">✓</span> Regular mock tests & feedback
-            </li>
-            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;">
-              <span style="color: var(--accent-teal);">✓</span> Small class sizes
-            </li>
-            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;">
-              <span style="color: var(--accent-teal);">✓</span> Ideal for quick score improvement
-            </li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;"><span style="color: var(--accent-teal);">✓</span> Full-time immersive program</li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;"><span style="color: var(--accent-teal);">✓</span> All 4 skills covered in depth</li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;"><span style="color: var(--accent-teal);">✓</span> Regular mock tests & feedback</li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;"><span style="color: var(--accent-teal);">✓</span> Small class sizes (max 12)</li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;"><span style="color: var(--accent-teal);">✓</span> Mon-Fri, 9:00 AM – 1:00 PM</li>
           </ul>
-          <a href="#" class="btn btn-primary" style="width: 100%; justify-content: center;">Enquire Now</a>
+          <a href="about.html#contact" class="btn btn-primary" style="width: 100%; justify-content: center;">Enquire Now</a>
         </div>
 
         <div class="glass-card">
@@ -109,67 +102,124 @@
           <h3 style="margin-bottom: var(--space-sm);">IELTS Course</h3>
           <p style="color: var(--accent-blue); font-weight: 600; margin-bottom: var(--space-md); font-size: 0.9rem;">Comprehensive preparation</p>
           <ul style="list-style: none; margin-bottom: var(--space-xl);">
-            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;">
-              <span style="color: var(--accent-teal);">✓</span> Flexible part-time schedule
-            </li>
-            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;">
-              <span style="color: var(--accent-teal);">✓</span> Listening, Reading, Writing, Speaking
-            </li>
-            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;">
-              <span style="color: var(--accent-teal);">✓</span> Practice tests included
-            </li>
-            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;">
-              <span style="color: var(--accent-teal);">✓</span> Experienced IELTS instructors
-            </li>
-            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;">
-              <span style="color: var(--accent-teal);">✓</span> Perfect for working professionals
-            </li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;"><span style="color: var(--accent-teal);">✓</span> Flexible part-time schedule</li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;"><span style="color: var(--accent-teal);">✓</span> Listening, Reading, Writing, Speaking</li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;"><span style="color: var(--accent-teal);">✓</span> Practice tests included</li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;"><span style="color: var(--accent-teal);">✓</span> Experienced IELTS instructors</li>
+            <li style="padding: 8px 0; display: flex; align-items: center; gap: 8px; color: var(--text-secondary); font-size: 0.92rem;"><span style="color: var(--accent-teal);">✓</span> Tue & Thu, 6:00 PM – 8:00 PM</li>
           </ul>
-          <a href="#" class="btn btn-outline" style="width: 100%; justify-content: center;">Enquire Now</a>
+          <a href="about.html#contact" class="btn btn-outline" style="width: 100%; justify-content: center;">Enquire Now</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- IELTS Tips -->
-  <section class="section section-dark" id="tips">
+  <!-- Free Practice Test -->
+  <section class="section section-dark" id="practice">
     <div class="container">
       <div class="section-header" data-animate="fade-in-up">
-        <div class="section-label">Expert Advice</div>
+        <div class="section-label">Free Resources</div>
+        <h2>Free Practice Tests</h2>
+        <p>Try these official sample questions to prepare for each section of the IELTS test.</p>
+      </div>
+
+      <div class="practice-grid" data-animate="fade-in-up">
+        <div class="practice-card">
+          <div class="practice-icon">🎧</div>
+          <h3>Listening Practice</h3>
+          <p>Practice with sample audio recordings and question types you'll encounter on test day.</p>
+          <a href="https://takeielts.britishcouncil.org/take-ielts/prepare/free-ielts-practice-tests/listening" target="_blank" class="btn btn-sm btn-outline">Start Practice →</a>
+        </div>
+        <div class="practice-card">
+          <div class="practice-icon">📖</div>
+          <h3>Reading Practice</h3>
+          <p>Read sample passages and practice answering questions within the time limit.</p>
+          <a href="https://takeielts.britishcouncil.org/take-ielts/prepare/free-ielts-practice-tests/reading" target="_blank" class="btn btn-sm btn-outline">Start Practice →</a>
+        </div>
+        <div class="practice-card">
+          <div class="practice-icon">✍️</div>
+          <h3>Writing Practice</h3>
+          <p>Review sample writing tasks and model answers for both Task 1 and Task 2.</p>
+          <a href="https://takeielts.britishcouncil.org/take-ielts/prepare/free-ielts-practice-tests/writing" target="_blank" class="btn btn-sm btn-outline">Start Practice →</a>
+        </div>
+        <div class="practice-card">
+          <div class="practice-icon">🗣️</div>
+          <h3>Speaking Practice</h3>
+          <p>Explore sample questions and watch video examples of speaking test performances.</p>
+          <a href="https://takeielts.britishcouncil.org/take-ielts/prepare/free-ielts-practice-tests/speaking" target="_blank" class="btn btn-sm btn-outline">Start Practice →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Study Guide -->
+  <section class="section" id="tips">
+    <div class="container">
+      <div class="section-header" data-animate="fade-in-up">
+        <div class="section-label">Study Guide</div>
         <h2>IELTS Preparation Tips</h2>
         <p>Proven strategies from our experienced instructors to help you succeed.</p>
       </div>
 
-      <div class="grid-4" data-animate="fade-in-up">
-        <div class="feature-card">
-          <div class="feature-icon coral">🎧</div>
-          <h3>Listening</h3>
-          <p>Practice with various English accents. Focus on keywords and anticipate answers before they come.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon teal">📖</div>
-          <h3>Reading</h3>
-          <p>Skim and scan techniques save time. Practice reading academic texts and identifying main ideas quickly.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon purple">✍️</div>
-          <h3>Writing</h3>
-          <p>Plan your essays before writing. Use clear paragraph structure and varied vocabulary. Always proofread.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon navy">🗣️</div>
-          <h3>Speaking</h3>
-          <p>Speak English daily. Record yourself to identify areas for improvement. Expand your answers naturally.</p>
-        </div>
+      <div style="max-width: 800px; margin: 0 auto;" data-animate="fade-in-up">
+        <ul class="study-guide-list">
+          <li>
+            <div class="tip-number">1</div>
+            <div class="tip-content">
+              <h4>Know the Test Format</h4>
+              <p>Familiarize yourself with all sections, question types, and timing before test day.</p>
+            </div>
+          </li>
+          <li>
+            <div class="tip-number">2</div>
+            <div class="tip-content">
+              <h4>Practice Under Time Pressure</h4>
+              <p>Always practice with a timer. Time management is critical for achieving your target score.</p>
+            </div>
+          </li>
+          <li>
+            <div class="tip-number">3</div>
+            <div class="tip-content">
+              <h4>Build Academic Vocabulary</h4>
+              <p>Read academic texts, journals, and news articles to expand your vocabulary range.</p>
+            </div>
+          </li>
+          <li>
+            <div class="tip-number">4</div>
+            <div class="tip-content">
+              <h4>Practice All Four Skills Daily</h4>
+              <p>Don't neglect any section. Balanced preparation across Listening, Reading, Writing, and Speaking is key.</p>
+            </div>
+          </li>
+          <li>
+            <div class="tip-number">5</div>
+            <div class="tip-content">
+              <h4>Record Yourself Speaking</h4>
+              <p>Listen back to identify pronunciation issues, filler words, and areas to improve fluency.</p>
+            </div>
+          </li>
+          <li>
+            <div class="tip-number">6</div>
+            <div class="tip-content">
+              <h4>Take Full Mock Tests</h4>
+              <p>Complete at least 3-5 full practice tests before your actual exam to build stamina and confidence.</p>
+            </div>
+          </li>
+          <li>
+            <div class="tip-number">7</div>
+            <div class="tip-content">
+              <h4>Focus on Task Response</h4>
+              <p>In Writing, always answer what the question asks. Off-topic responses receive significantly lower scores.</p>
+            </div>
+          </li>
+        </ul>
       </div>
 
+      <!-- Additional FAQ -->
       <div style="max-width: 700px; margin: var(--space-2xl) auto 0;" data-animate="fade-in-up">
         <div class="accordion">
           <div class="accordion-item">
-            <button class="accordion-header">
-              How long should I prepare for IELTS?
-              <span class="accordion-icon">+</span>
-            </button>
+            <button class="accordion-header">How long should I prepare for IELTS?<span class="accordion-icon">+</span></button>
             <div class="accordion-content">
               <div class="accordion-body">
                 <p>This depends on your current English level and target score. Generally, we recommend 1–3 months of focused preparation. Our intensive course is ideal for those with limited time, while the regular IELTS course suits those who prefer a steady pace.</p>
@@ -177,10 +227,7 @@
             </div>
           </div>
           <div class="accordion-item">
-            <button class="accordion-header">
-              What score do I need?
-              <span class="accordion-icon">+</span>
-            </button>
+            <button class="accordion-header">What score do I need?<span class="accordion-icon">+</span></button>
             <div class="accordion-content">
               <div class="accordion-body">
                 <p>Score requirements vary by institution and purpose. Universities typically require Band 6.0–7.5. Immigration usually requires Band 6.0–7.0. Check with your target institution or immigration authority for specific requirements.</p>
@@ -188,10 +235,7 @@
             </div>
           </div>
           <div class="accordion-item">
-            <button class="accordion-header">
-              Are there free practice resources?
-              <span class="accordion-icon">+</span>
-            </button>
+            <button class="accordion-header">Are there free practice resources?<span class="accordion-icon">+</span></button>
             <div class="accordion-content">
               <div class="accordion-body">
                 <p>Yes! The British Council offers free sample tests, videos, and preparation materials at <strong>takeielts.britishcouncil.org</strong>. Our instructors also recommend specific online resources during our courses.</p>
@@ -204,7 +248,7 @@
   </section>
 
   <!-- Success Stories -->
-  <section class="section" id="stories">
+  <section class="section section-dark" id="stories">
     <div class="container">
       <div class="section-header" data-animate="fade-in-up">
         <div class="section-label">Inspiration</div>
@@ -217,16 +261,37 @@
           <div class="story-score">🏆 Band 8.0</div>
           <h4 style="margin-bottom: var(--space-sm);">Bataa D.</h4>
           <p style="font-size: 0.9rem;">"I studied at JET for 2 months and scored band 8! The intensive course was exactly what I needed. The teaching methods are effective and the mock tests prepared me perfectly."</p>
+          <div class="testimonial-author" style="margin-top:var(--space-md)">
+            <div class="testimonial-avatar">B</div>
+            <div>
+              <div class="testimonial-name">Bataa D.</div>
+              <div class="testimonial-role">University of Melbourne</div>
+            </div>
+          </div>
         </div>
         <div class="story-card">
           <div class="story-score">🏆 Band 7.5</div>
           <h4 style="margin-bottom: var(--space-sm);">Sarnai T.</h4>
-          <p style="font-size: 0.9rem;">"Knowledge, experience, dedication and atmosphere — I highly recommend JET to anyone preparing for IELTS. The classes are well-organized and the teachers genuinely care about your progress."</p>
+          <p style="font-size: 0.9rem;">"Knowledge, experience, dedication and atmosphere — I highly recommend JET to anyone preparing for IELTS. The classes are well-organized and the teachers genuinely care."</p>
+          <div class="testimonial-author" style="margin-top:var(--space-md)">
+            <div class="testimonial-avatar">S</div>
+            <div>
+              <div class="testimonial-name">Sarnai T.</div>
+              <div class="testimonial-role">University of Toronto</div>
+            </div>
+          </div>
         </div>
         <div class="story-card">
           <div class="story-score">🏆 Band 8.5</div>
           <h4 style="margin-bottom: var(--space-sm);">Dorj S.</h4>
-          <p style="font-size: 0.9rem;">"The computer-delivered IELTS test experience at JET was seamless. The facilities are modern and the staff are incredibly professional. Achieved my dream score thanks to JET!"</p>
+          <p style="font-size: 0.9rem;">"The computer-delivered IELTS test at JET was seamless. The facilities are modern and the staff are incredibly professional. Achieved my dream score thanks to JET!"</p>
+          <div class="testimonial-author" style="margin-top:var(--space-md)">
+            <div class="testimonial-avatar">D</div>
+            <div>
+              <div class="testimonial-name">Dorj S.</div>
+              <div class="testimonial-role">Imperial College London</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -252,63 +317,54 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <div class="logo-icon">J</div>
-            <div>JET <span>Institute</span></div>
-          </a>
+          <a href="index.html" class="logo"><div class="logo-icon">J</div><div>JET <span>Institute</span></div></a>
           <p>JET Institute has been Mongolia's leading English language school since 1995. As the official IELTS Test Centre, we are committed to helping students achieve academic success.</p>
         </div>
         <div>
-          <h4>Quick Links</h4>
+          <h4>Resources</h4>
           <div class="footer-links">
-            <a href="book-ielts.html">Book IELTS</a>
-            <a href="about-test.html">About the Test</a>
-            <a href="preparation.html">Preparation</a>
-            <a href="about.html">About Us</a>
+            <a href="preparation.html#tips">Study Tips</a>
+            <a href="preparation.html#stories">Success Stories</a>
+            <a href="preparation.html#courses">Free Materials</a>
+            <a href="about-test.html">Test Information</a>
           </div>
         </div>
         <div>
-          <h4>IELTS</h4>
+          <h4>Pricing</h4>
           <div class="footer-links">
-            <a href="about-test.html#types">Test Types</a>
-            <a href="book-ielts.html#schedule">Test Schedule</a>
-            <a href="book-ielts.html#results">Test Results</a>
+            <a href="book-ielts.html#fees">Test Prices</a>
+            <a href="book-ielts.html#fees">Cancellations</a>
             <a href="about-test.html#osr">OSR & EOR</a>
           </div>
         </div>
         <div>
-          <h4>Contact Us</h4>
-          <div class="footer-contact-item">
-            <span class="icon">📍</span>
-            <span>Max Centre 5th Floor, Sukhbaatar District, Ulaanbaatar, Mongolia</span>
-          </div>
-          <div class="footer-contact-item">
-            <span class="icon">📞</span>
-            <span>(+976) 7711-8899 (2)</span>
-          </div>
-          <div class="footer-contact-item">
-            <span class="icon">✉</span>
-            <span>ielts@jet-english.mn</span>
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="about.html#careers">Careers</a>
+            <a href="about.html#contact">Contact</a>
+            <a href="about.html#policy">Our Policy</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
         <span>© 2026 JET Institute. All rights reserved.</span>
         <div class="footer-social">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Twitter">𝕏</a>
-          <a href="#" aria-label="YouTube">▶</a>
+          <a href="https://facebook.com/jetinstitute" aria-label="Facebook" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://instagram.com/jetinstitute" aria-label="Instagram" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/></svg></a>
+          <a href="#" aria-label="Twitter" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" aria-label="YouTube" target="_blank"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
         </div>
       </div>
     </div>
   </footer>
 
   <button class="scroll-top" aria-label="Scroll to top">↑</button>
-
-  <a href="https://m.me/jetinstitute" target="_blank" class="chatbot-btn" aria-label="Chat with us">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-  </a>
-
+  <a href="https://m.me/jetinstitute" target="_blank" class="chatbot-btn" aria-label="Chat with us"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
   <script src="js/script.js"></script>
+    <!-- Chatbase Chatbot -->
+    <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="ytJWlCoYUFz3FrdeQ30_n";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    </script>
 </body>
 </html>

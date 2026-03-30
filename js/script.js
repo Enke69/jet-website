@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveNav();
   initCounters();
   initTestimonialSlider();
+  initSearchBar();
+  initLangSwitch();
+  initSidebarSpy();
 });
 
 // --- Sticky Header ---
@@ -246,3 +249,80 @@ document.addEventListener('click', (e) => {
     }
   }
 });
+
+// --- Search Bar ---
+function initSearchBar() {
+  const toggle = document.querySelector('.search-toggle');
+  const overlay = document.querySelector('.search-overlay');
+  if (!toggle || !overlay) return;
+
+  const closeBtn = overlay.querySelector('.search-close');
+  const input = overlay.querySelector('input');
+
+  toggle.addEventListener('click', () => {
+    overlay.classList.add('active');
+    setTimeout(() => input && input.focus(), 300);
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      overlay.classList.remove('active');
+    });
+  }
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove('active');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) {
+      overlay.classList.remove('active');
+    }
+  });
+}
+
+// --- Language Switch ---
+function initLangSwitch() {
+  const buttons = document.querySelectorAll('.lang-btn');
+  if (buttons.length === 0) return;
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+}
+
+// --- Sidebar Scroll Spy ---
+function initSidebarSpy() {
+  const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+  if (sidebarLinks.length === 0) return;
+
+  const sections = [];
+  sidebarLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      const section = document.querySelector(href);
+      if (section) sections.push({ link, section });
+    }
+  });
+
+  if (sections.length === 0) return;
+
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY + 150;
+    let current = sections[0];
+
+    sections.forEach(({ link, section }) => {
+      if (section.offsetTop <= scrollPos) {
+        current = { link, section };
+      }
+    });
+
+    sidebarLinks.forEach(l => l.classList.remove('active'));
+    current.link.classList.add('active');
+  }, { passive: true });
+}
