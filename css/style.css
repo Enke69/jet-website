@@ -1771,30 +1771,8 @@ p {
   color: var(--text-primary);
 }
 
-/* ============================================
-   CHATBOT BUTTON
-   ============================================ */
-.chatbot-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 90px;
-  width: 56px;
-  height: 56px;
-  background: var(--gradient-coral);
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-white);
-  box-shadow: var(--shadow-glow-coral);
-  transition: all var(--transition-base);
-  z-index: 998;
-}
 
-.chatbot-btn:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 40px rgba(204, 0, 0, 0.35);
-}
+
 
 /* ============================================
    MAP SECTION
