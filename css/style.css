@@ -106,6 +106,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 a {
@@ -711,6 +713,8 @@ p {
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .glass-card::before {
@@ -1315,6 +1319,42 @@ p {
   gap: var(--space-2xl);
 }
 
+.content-with-sidebar > main {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.content-with-sidebar > main > * {
+  max-width: 100%;
+}
+
+.content-with-sidebar > main .grid-2,
+.content-with-sidebar > main .grid-3,
+.content-with-sidebar > main .grid-4 {
+  max-width: 100%;
+}
+
+.content-with-sidebar > main .glass-card,
+.content-with-sidebar > main .info-box,
+.content-with-sidebar > main .feature-card,
+.content-with-sidebar > main .comparison-card,
+.content-with-sidebar > main .policy-card {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.content-with-sidebar > main p,
+.content-with-sidebar > main li,
+.content-with-sidebar > main h2,
+.content-with-sidebar > main h3,
+.content-with-sidebar > main h4 {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 .sidebar {
   position: sticky;
   top: calc(var(--header-height) + var(--space-xl));
@@ -1366,6 +1406,8 @@ p {
   border-top: 1px solid var(--border-subtle);
   border-right: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .info-box.warning {
@@ -2047,25 +2089,37 @@ p {
 /* ============================================
    RESPONSIVE
    ============================================ */
+
+/* --- Tablet landscape (≤ 1024px) --- */
 @media (max-width: 1024px) {
   .grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .content-with-sidebar {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+    gap: var(--space-lg);
   }
 
   .sidebar {
     position: static;
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 0;
   }
 
   .sidebar-nav {
     display: flex;
     overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
     gap: 0;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    position: relative;
   }
 
   .sidebar-nav::-webkit-scrollbar {
@@ -2077,6 +2131,11 @@ p {
     border-left: none;
     border-bottom: 3px solid transparent;
     padding: var(--space-sm) var(--space-md);
+    flex-shrink: 0;
+  }
+
+  .sidebar-nav a + a {
+    border-top: none;
   }
 
   .sidebar-nav a.active {
@@ -2091,21 +2150,55 @@ p {
   .testimonial-slide {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .hero-stat-item {
+    flex: 1 1 calc(33% - var(--space-xl));
+    min-width: 120px;
+  }
 }
 
+/* --- Tablet portrait (≤ 900px) --- */
+@media (max-width: 900px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .practice-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .learning-path {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .learning-path::before {
+    display: none;
+  }
+
+  .path-step {
+    flex: 0 0 auto;
+    width: calc(33% - var(--space-md));
+  }
+}
+
+/* --- Mobile (≤ 768px) --- */
 @media (max-width: 768px) {
   :root {
     --header-height: 70px;
   }
 
+  /* --- Top bar hidden --- */
   .top-bar {
     display: none;
   }
 
+  /* --- Hamburger menu --- */
   .hamburger {
     display: flex;
   }
 
+  /* --- Mobile navigation drawer --- */
   .nav {
     position: fixed;
     top: 0;
@@ -2122,6 +2215,7 @@ p {
     z-index: 1000;
     border-left: 1px solid var(--border-glass);
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav.open {
@@ -2133,6 +2227,9 @@ p {
     font-size: 1rem;
     border-bottom: 1px solid var(--border-subtle);
     border-radius: 0;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
   }
 
   .nav-link.active::after {
@@ -2143,6 +2240,7 @@ p {
     margin-left: 0;
     margin-top: var(--space-md);
     text-align: center;
+    justify-content: center;
     border-bottom: none;
     border-radius: var(--radius-md);
   }
@@ -2164,6 +2262,7 @@ p {
     display: block;
   }
 
+  /* --- Hero --- */
   .hero {
     min-height: auto;
     padding: var(--space-3xl) 0;
@@ -2175,6 +2274,7 @@ p {
 
   .hero p {
     font-size: 1rem;
+    max-width: 100%;
   }
 
   .hero-badge {
@@ -2182,12 +2282,17 @@ p {
     padding: 6px 14px;
   }
 
+  .hero-content {
+    max-width: 100%;
+  }
+
   .hero-stats {
     gap: var(--space-lg);
   }
 
   .hero-stat-item {
-    flex: 1 1 100%;
+    flex: 1 1 calc(50% - var(--space-lg));
+    min-width: 0;
   }
 
   .hero-stat-item h3 {
@@ -2198,27 +2303,6 @@ p {
     font-size: 0.8rem;
   }
 
-  .grid-2,
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .grid-4 {
-    grid-template-columns: 1fr;
-  }
-
-  .testimonial-slide {
-    grid-template-columns: 1fr;
-  }
-
-  .testimonial-card {
-    padding: var(--space-xl);
-  }
-
-  .newsletter-form {
-    flex-direction: column;
-  }
-
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
@@ -2227,42 +2311,6 @@ p {
   .hero-actions .btn {
     text-align: center;
     justify-content: center;
-  }
-
-  .practice-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .schedule-calendar {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .learning-path {
-    flex-direction: column;
-  }
-
-  .learning-path::before {
-    top: 30px;
-    bottom: 30px;
-    left: 50%;
-    right: auto;
-    width: 2px;
-    height: auto;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-2xl);
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: var(--space-md);
-    text-align: center;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
   }
 
   .hero-page {
@@ -2278,6 +2326,85 @@ p {
     display: none;
   }
 
+  /* --- Grid layouts --- */
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Testimonials --- */
+  .testimonial-slide {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card {
+    padding: var(--space-xl);
+  }
+
+  /* --- Newsletter --- */
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form .btn {
+    width: 100%;
+  }
+
+  /* --- Schedule & calendar --- */
+  .schedule-calendar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Learning path --- */
+  .learning-path {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .learning-path::before {
+    top: 30px;
+    bottom: 30px;
+    left: 50%;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+
+  .path-step {
+    width: auto;
+  }
+
+  /* --- Footer --- */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  /* --- Forms --- */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Tables --- */
   .price-table {
     font-size: 0.82rem;
     min-width: 380px;
@@ -2288,12 +2415,9 @@ p {
     padding: var(--space-sm) var(--space-md);
   }
 
-  .steps-grid {
-    grid-template-columns: 1fr;
-  }
-
+  /* --- Section spacing --- */
   .section {
-    padding: var(--space-4xl) 0;
+    padding: var(--space-3xl) 0;
   }
 
   .section-header {
@@ -2304,10 +2428,16 @@ p {
     font-size: 1rem;
   }
 
+  /* --- Maps --- */
   .map-wrapper iframe {
     height: 300px;
   }
 
+  .map-container {
+    height: 280px;
+  }
+
+  /* --- Cards spacing --- */
   .glass-card {
     padding: var(--space-xl);
   }
@@ -2316,15 +2446,18 @@ p {
     padding: var(--space-xl);
   }
 
+  /* --- Accordion --- */
   .accordion-header {
     padding: var(--space-md) var(--space-lg);
     font-size: 0.95rem;
+    gap: var(--space-sm);
   }
 
   .accordion-body {
     padding: 0 var(--space-lg) var(--space-lg);
   }
 
+  /* --- Scroll to top --- */
   .scroll-top {
     bottom: 20px;
     right: 20px;
@@ -2333,11 +2466,52 @@ p {
     font-size: 1rem;
   }
 
+  /* --- Container padding --- */
   .container {
     padding: 0 var(--space-lg);
   }
+
+  /* --- Sidebar tabs on mobile --- */
+  .sidebar {
+    position: relative;
+    z-index: 1;
+  }
+
+  .sidebar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(to right, transparent, var(--bg-primary));
+    pointer-events: none;
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    z-index: 1;
+  }
+
+  .content-block:first-child {
+    margin-top: var(--space-lg);
+  }
+
+  /* --- Policy cards in grid-2 — stack --- */
+  .policy-card {
+    padding: var(--space-xl);
+  }
+
+  /* --- Story cards --- */
+  .story-card {
+    padding: var(--space-xl);
+  }
+
+  /* --- CTA section buttons --- */
+  .newsletter-section .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
+/* --- Small mobile (≤ 480px) --- */
 @media (max-width: 480px) {
   .container {
     padding: 0 var(--space-md);
@@ -2371,6 +2545,10 @@ p {
     padding-top: var(--space-xl);
   }
 
+  .hero-stat-item {
+    flex: 1 1 100%;
+  }
+
   .hero-stat-item h3 {
     font-size: 1.4rem;
   }
@@ -2399,6 +2577,7 @@ p {
     font-size: clamp(1.4rem, 5vw, 2rem);
   }
 
+  /* --- Calendar: 2 columns on small mobile --- */
   .schedule-calendar {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-sm);
@@ -2408,8 +2587,20 @@ p {
     padding: var(--space-md);
   }
 
+  .cal-date-card .cal-day {
+    font-size: 1.6rem;
+  }
+
+  .cal-date-card .cal-month {
+    font-size: 0.7rem;
+  }
+
   .map-wrapper iframe {
     height: 250px;
+  }
+
+  .map-container {
+    height: 220px;
   }
 
   .footer-brand p {
@@ -2439,5 +2630,307 @@ p {
 
   .step-card {
     padding: var(--space-xl);
+  }
+
+  /* --- Comparison cards --- */
+  .comparison-card-header {
+    padding: var(--space-lg);
+  }
+
+  .comparison-card-body {
+    padding: var(--space-lg);
+  }
+
+  /* --- Info box --- */
+  .info-box {
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  /* --- Glass card stats --- */
+  .glass-card h3 {
+    font-size: 1.8rem;
+  }
+
+  /* --- Testimonials --- */
+  .testimonial-card {
+    padding: var(--space-lg);
+  }
+
+  .testimonial-card::before {
+    font-size: 3rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.88rem;
+  }
+
+  /* --- Feature card --- */
+  .feature-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.4rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.1rem;
+  }
+
+  /* --- Table adjustments --- */
+  .price-table {
+    min-width: 320px;
+    font-size: 0.78rem;
+  }
+
+  .price-table thead th,
+  .price-table tbody td {
+    padding: var(--space-xs) var(--space-sm);
+  }
+
+  .price-table thead th:last-child,
+  .price-table tbody td:last-child {
+    text-align: right;
+  }
+
+  /* --- Step number --- */
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  /* --- Study guide --- */
+  .study-guide-list li {
+    padding: var(--space-md);
+  }
+
+  .study-guide-list .tip-number {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+
+  /* --- Path step --- */
+  .path-step-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+  }
+
+  .path-step-label {
+    font-size: 0.72rem;
+  }
+
+  /* --- Newsletter CTA buttons stack full-width --- */
+  .newsletter-section [style*="display: flex"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .newsletter-section .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* --- Breadcrumb --- */
+  .breadcrumb {
+    font-size: 0.8rem;
+  }
+}
+
+/* --- Very small mobile (≤ 360px) --- */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 var(--space-sm);
+  }
+
+  .hero h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .hero-badge {
+    font-size: 0.68rem;
+    padding: 5px 10px;
+  }
+
+  .hero-stat-item h3 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  .section-header p {
+    font-size: 0.88rem;
+  }
+
+  .schedule-calendar {
+    grid-template-columns: 1fr;
+  }
+
+  .footer h4 {
+    font-size: 0.88rem;
+  }
+
+  .footer-links a {
+    font-size: 0.82rem;
+  }
+
+  .logo {
+    font-size: 1.15rem;
+  }
+
+  .logo-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 0.82rem;
+  }
+
+  .btn-lg {
+    padding: 12px 22px;
+    font-size: 0.88rem;
+  }
+
+  .glass-card {
+    padding: var(--space-lg);
+  }
+
+  .feature-card {
+    padding: var(--space-lg);
+  }
+
+  .accordion-header {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.88rem;
+  }
+
+  .accordion-body {
+    padding: 0 var(--space-md) var(--space-md);
+    font-size: 0.88rem;
+  }
+
+  .price-table {
+    min-width: 280px;
+    font-size: 0.72rem;
+  }
+
+  .nav {
+    width: 90vw;
+    max-width: 280px;
+    padding: calc(var(--header-height) + var(--space-lg)) var(--space-lg) var(--space-lg);
+  }
+
+  .nav-link {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.92rem;
+    min-height: 44px;
+  }
+}
+
+/* --- Touch device improvements --- */
+@media (hover: none) and (pointer: coarse) {
+  /* Disable hover transforms on touch devices to prevent sticky hover states */
+  .glass-card:hover,
+  .feature-card:hover,
+  .testimonial-card:hover,
+  .comparison-card:hover,
+  .story-card:hover,
+  .step-card:hover,
+  .cal-date-card:hover,
+  .policy-card:hover,
+  .study-guide-list li:hover {
+    transform: none;
+  }
+
+  /* Ensure minimum tap target size */
+  .footer-links a,
+  .breadcrumb a,
+  .social-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Larger accordion tap target */
+  .accordion-header {
+    min-height: 48px;
+  }
+
+  /* Sidebar nav links need to be tappable */
+  .sidebar-nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* --- Landscape phone orientation --- */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: var(--space-xl) 0;
+  }
+
+  .hero-page {
+    padding: var(--space-lg) 0;
+  }
+
+  .nav {
+    padding-top: var(--space-lg);
+  }
+}
+
+/* --- Print styles --- */
+@media print {
+  .top-bar,
+  .hamburger,
+  .nav-overlay,
+  .search-overlay,
+  .scroll-top,
+  .hero-shapes,
+  .hero-bg {
+    display: none !important;
+  }
+
+  .header {
+    position: static;
+    box-shadow: none;
+    border-bottom: 2px solid #000;
+  }
+
+  .nav {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    border: none;
+    flex-direction: row;
+  }
+
+  .nav-link.cta {
+    background: none;
+    color: var(--text-primary);
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  body {
+    color: #000;
+  }
+
+  .section {
+    padding: var(--space-xl) 0;
   }
 }
